@@ -1,0 +1,10 @@
+.update-form{
+    display: block;
+    z-index: 1000;
+}
+
+.hide
+{
+    display: none !important;
+
+}

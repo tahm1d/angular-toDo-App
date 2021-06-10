@@ -1,0 +1,24 @@
+<form *ngIf="showOrHide" class="update-form" action="" (ngSubmit)="onUpdate()">
+    <div class="form-control">
+        <label for="id">input id</label>
+        <input type="text" id="id" name="id" [(ngModel)]="id" placeholder="update task" />
+      </div>
+
+    <div class="form-control">
+      <label for="text">Update Task</label>
+      <input type="text" id="text" name="text" [(ngModel)]="text" placeholder="Update Task" />
+    </div>
+  
+    <div class="form-control">
+      <label for="day">Update Day and Time</label>
+      <input type="text" id="day" name="day" [(ngModel)]="day" placeholder="Update Day and Time" />
+    </div>
+  
+    <div class="form-control form-control-check">
+      <label for="reminder">Update Reminder</label>
+      <input type="checkbox" id="reminder" name="reminder" [(ngModel)]="reminder" placeholder="Update Reminder" />
+    </div>
+    <input type="submit" value="Update Task" class="btn btn-block">
+  
+  </form>
+  

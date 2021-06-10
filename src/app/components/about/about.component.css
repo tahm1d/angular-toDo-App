@@ -1,0 +1,16 @@
+.about
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 5px;
+    color: rgb(41, 41, 41);
+    margin-top: 5px;
+}
