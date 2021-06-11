@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../Task';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
@@ -9,6 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./update-card.component.css'],
 })
 export class UpdateCardComponent implements OnInit {
+
+  @Input() taskFromParent;
   id: number;
   text: string;
   day: string;
@@ -27,16 +29,16 @@ export class UpdateCardComponent implements OnInit {
   ngOnInit(): void {}
 
   onUpdate() {
-    if (!this.text) {
-      alert('please add task');
-      return;
-    }
+    // if (!this.text) {
+    //   alert('please add task');
+    //   return;
+    // }
 
     const newTask = {
-      id: this.id,
-      text: this.text,
-      day: this.day,
-      reminder: this.reminder,
+      id: this.taskFromParent.id,
+      text: this.taskFromParent.text,
+      day: this.taskFromParent.day,
+      reminder: this.taskFromParent.reminder,
     };
 
     this.onUpdateTask.emit(newTask);

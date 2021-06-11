@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Task} from '../../Task';
 import {TaskService} from '../../services/task.service';
 import {UiService} from '../../services/ui.service';
@@ -10,6 +10,8 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
+
+  task;
 
   tasks: Task[] = [];
   showOrHide: boolean;
@@ -44,9 +46,10 @@ export class TasksComponent implements OnInit {
     this.taskService.updateTask(task).subscribe(() => this.taskService.getTasks().subscribe((tasks) => this.tasks=tasks));
   }
 
-  change(){
+  change(task){
     console.log("clicked item");
     this.uiService.toggleHide();
+    this.task=task;
   }
 
 }
